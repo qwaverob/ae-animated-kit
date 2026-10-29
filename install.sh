@@ -28,12 +28,12 @@ fi
 echo "2. FFmpeg"
 if command -v ffmpeg >/dev/null 2>&1 && command -v ffprobe >/dev/null 2>&1; then ok "ffmpeg found"
 elif [ $CHECK = 1 ]; then add "ffmpeg"
-else add "ffmpeg (static build via npm into ~/.ae-kit)"
-  if npm install --prefix "$T/ff" --no-audit --no-fund ffmpeg-static ffprobe-static >/dev/null 2>&1; then
-    ln -sf "$T/ff/node_modules/ffmpeg-static/ffmpeg" "$BIN/ffmpeg"
-    ln -sf "$(ls "$T"/ff/node_modules/ffprobe-static/bin/"$OS"/"$NARCH"/ffprobe 2>/dev/null | head -1)" "$BIN/ffprobe"; hash -r
-    ffmpeg -version >/dev/null 2>&1 && ffprobe -version >/dev/null 2>&1 && ok "ffmpeg ready" || bad "ffmpeg did not start"
-  else bad "could not install ffmpeg"; fi
+else add "ffmpeg (static build into ~/.ae-kit)"
+  REL=https://github.com/eugeneware/ffmpeg-static/releases/download/b6.1.1; okff=1
+  for b in ffmpeg ffprobe; do
+    curl -fsSL "$REL/$b-$OS-$NARCH.gz" -o "$T/$b.gz" && gunzip -f "$T/$b.gz" && chmod +x "$T/$b" && mv -f "$T/$b" "$BIN/$b" || okff=0
+  done; hash -r
+  [ $okff = 1 ] && ffmpeg -version >/dev/null 2>&1 && ffprobe -version >/dev/null 2>&1 && ok "ffmpeg ready" || bad "ffmpeg did not start"
 fi
 
 echo "3. HyperFrames (animation engine)"
