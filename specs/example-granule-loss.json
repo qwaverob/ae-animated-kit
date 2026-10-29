@@ -1,0 +1,122 @@
+{
+ "slug": "example-granule-loss",
+ "title": "Black sand in your gutters",
+ "caption": "Black sand in your gutters? That is granule loss.\nIt ages your shingles fast.\nDM us a photo and we will tell you what we see.\nES: ¿Arena negra en las canaletas? Mándanos una foto.",
+ "check_with_ae": [
+  "Yearly inspection wording",
+  "\"DM us a photo\": who answers and how fast?"
+ ],
+ "scenes": [
+  {
+   "template": "house",
+   "props": {
+    "roof": "shingle",
+    "weather": "sun",
+    "palms": 2
+   },
+   "kicker": "ROOF TIP",
+   "headline": "Black sand in your **gutter**?",
+   "say": "Seeing black sand in your gutters after it rains?",
+   "keys": [
+    "gutters"
+   ]
+  },
+  {
+   "template": "closeup",
+   "props": {
+    "roof": "shingle",
+    "detail": "granules",
+    "label": "Granules"
+   },
+   "headline": "Those are **granules**",
+   "say": "Those are granules. They protect your shingles from the Florida sun.",
+   "keys": [
+    "granules"
+   ]
+  },
+  {
+   "template": "house",
+   "props": {
+    "roof": "shingle",
+    "weather": "sun",
+    "palms": 1,
+    "damage": [
+     "streaks"
+    ],
+    "callouts": [
+     {
+      "label": "Bald spots",
+      "at": "streaks"
+     }
+    ]
+   },
+   "headline": "Losing them **ages** your roof",
+   "say": "When they wash off, the shingle bakes and ages fast.",
+   "keys": [
+    "ages"
+   ]
+  },
+  {
+   "template": "checklist",
+   "props": {
+    "items": [
+     "Black grit in gutters",
+     "Shiny bald patches",
+     "Curling edges"
+    ]
+   },
+   "headline": "Look for **3 signs**",
+   "say": "Look for three signs. Grit in the gutters, bald patches, and curling edges.",
+   "keys": [
+    "three"
+   ]
+  },
+  {
+   "template": "nogo",
+   "props": {
+    "roof": "shingle",
+    "label": "Stay on the ground"
+   },
+   "headline": "Never **climb** up there",
+   "say": "Do not climb up there. Check from the ground with your phone.",
+   "keys": [
+    "climb"
+   ]
+  },
+  {
+   "template": "phone",
+   "props": {
+    "roof": "shingle",
+    "reply": "Thanks! We will take a look."
+   },
+   "headline": "Send us a **photo**",
+   "say": "Send us a photo and we will tell you what we see.",
+   "keys": [
+    "photo"
+   ]
+  },
+  {
+   "template": "yearly",
+   "props": {
+    "roof": "shingle",
+    "text": "EVERY YEAR"
+   },
+   "headline": "Inspect it **every year**",
+   "say": "A yearly inspection catches this early, before it turns into a leak.",
+   "keys": [
+    "yearly"
+   ]
+  },
+  {
+   "template": "endcard",
+   "props": {
+    "cta": "DM US A PHOTO"
+   },
+   "headline": "Not sure? **Ask us**",
+   "say": "A and E Brothers Roofing. DM us a photo today.",
+   "keys": [
+    "photo"
+   ]
+  }
+ ]
+}

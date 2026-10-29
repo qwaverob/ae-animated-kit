@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<script src="assets/gsap.min.js"></script>
+<style>
+  html,body{margin:0;padding:0;background:#000}
+  #root{position:relative;width:1080px;height:1920px;overflow:hidden;font-family:"Inter",sans-serif;-webkit-font-smoothing:antialiased}
+  .scene{position:absolute;inset:0;visibility:hidden}
+  .serif{font-family:"Instrument Serif",serif;font-style:italic;font-weight:400;letter-spacing:-0.01em}
+  .head{font-family:"Inter Tight","Inter",sans-serif;letter-spacing:-0.035em}
+  .center{position:absolute;left:0;right:0;text-align:center}
+  /* S1 hook */
+  #s1{background:#000}
+  #s1 .l1{top:470px;font-size:64px;font-weight:500;color:#C9C8CC}
+  #s1 .l2{top:548px;font-size:124px;font-weight:800;color:#fff}
+  #s1 .l3{top:676px;font-size:124px;font-weight:800;color:#fff}
+  #s1 .l3 .serif{font-size:150px;font-weight:400}
+  .pill{position:absolute;left:290px;top:960px;width:500px;height:104px;border-radius:52px;background:#1C1C1E;display:flex;align-items:center;padding:0 34px;box-sizing:border-box;gap:22px}
+  .pill .dot{width:22px;height:22px;border-radius:50%;background:#FF453A}
+  .pill .bars{flex:1;display:flex;align-items:center;gap:6px;height:60px}
+  .pill .bars i{display:block;width:6px;border-radius:3px;background:#8E8E93}
+  .pill .t{font-size:30px;color:#C9C8CC;font-weight:600;font-variant-numeric:tabular-nums}
+  /* S3 counters */
+  #s3{background:#F4F3F6}
+  .card{position:absolute;left:96px;width:888px;height:228px;border-radius:52px;background:#fff;box-shadow:0 18px 40px rgba(20,20,30,.08),0 2px 6px rgba(20,20,30,.05);display:flex;align-items:center;padding:0 56px 0 46px;box-sizing:border-box;gap:36px}
+  .tile{width:132px;height:132px;border-radius:34px;display:flex;align-items:center;justify-content:center;box-shadow:inset 0 -6px 12px rgba(0,0,0,.18)}
+  .card .lab{flex:1;font-size:56px;font-weight:600;color:#1B1A1D;letter-spacing:-0.02em;line-height:1.05}
+  .card .num{font-size:150px;font-weight:800;color:#1B1A1D;font-family:"Inter Tight";letter-spacing:-0.04em}
+  #clap{position:absolute;left:380px;top:300px;width:330px;filter:drop-shadow(0 30px 30px rgba(0,0,0,.18))}
+  /* S6 system */
+  #s6{background:#0891B2}
+  #s6 .k{top:640px;font-size:60px;font-weight:600;color:rgba(255,255,255,.92)}
+  #s6 .big{top:700px;font-size:300px;color:#fff;line-height:1}
+  .wave{position:absolute;left:300px;width:480px;top:1130px;height:160px;display:flex;align-items:center;justify-content:space-between}
+  .wave i{display:block;width:12px;border-radius:6px;background:rgba(255,255,255,.55)}
+  /* S13 CTA */
+  #s13{background:#F4F3F6}
+  #s13 .k{top:330px;font-size:64px;font-weight:500;color:#1B1A1D}
+  #s13 .big{top:400px;font-size:250px;font-weight:800;color:#1B1A1D;line-height:1}
+  #s13 .sub{top:690px;font-size:42px;font-weight:500;color:#6E6D72}
+  #s13 .sub b{color:#1B1A1D;font-weight:700}
+  .thread{position:absolute;left:84px;right:84px;top:840px}
+  .row{display:flex;gap:24px;align-items:flex-start;margin-bottom:34px}
+  .av{width:92px;height:92px;border-radius:50%;flex:none}
+  .bub{background:#fff;border-radius:36px;padding:26px 34px;box-shadow:0 10px 26px rgba(20,20,30,.07);font-size:40px;color:#1B1A1D}
+  .bub .u{font-size:30px;font-weight:700;color:#6E6D72;display:block;margin-bottom:6px}
+  .bub.kw{font-weight:800;letter-spacing:.02em}
+  .reply{margin-left:116px}
+  .reply .bub{background:#0891B2;color:#fff}
+  .reply .bub .u{color:rgba(255,255,255,.8)}
+  .tag{position:absolute;right:108px;top:640px;background:#0891B2;color:#fff;font-weight:800;font-size:30px;padding:12px 26px;border-radius:30px;letter-spacing:.04em}
+  .input{position:absolute;left:84px;right:84px;top:1400px;height:110px;border-radius:55px;background:#fff;box-shadow:0 8px 22px rgba(20,20,30,.06);display:flex;align-items:center;padding:0 18px 0 44px;box-sizing:border-box;font-size:38px;color:#A3A2A7}
+  .input .send{margin-left:auto;width:78px;height:78px;border-radius:50%;background:#0891B2;display:flex;align-items:center;justify-content:center}
+  .typing{display:inline-flex;gap:10px}
+  .typing i{width:16px;height:16px;border-radius:50%;background:rgba(255,255,255,.85);display:block}
+</style></head>
+<body>
+<div id="root" data-composition-id="kf" data-start="0" data-duration="36" data-width="1080" data-height="1920">
+
+  <!-- S1 HOOK 0.0-3.5 -->
+  <div class="scene" id="s1" data-start="0" data-duration="3.5">
+    <div class="center l1">Everything you're</div>
+    <div class="center l2 head">about to see</div>
+    <div class="center l3 head">came from <span class="serif">this.</span></div>
+    <div class="pill"><span class="dot"></span><span class="bars" id="b1"></span><span class="t">0:03</span></div>
+  </div>
+
+  <!-- S3 COUNTERS 6.2-11.0 -->
+  <div class="scene" id="s3" data-start="6.2" data-duration="4.8">
+    <img id="clap" src="assets/clapper_board_3d.png">
+    <div class="card" id="c1" style="top:700px"><div class="tile" style="background:linear-gradient(#3A3A3C,#1C1C1E)">
+      <svg width="70" height="70" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-5.5 6-5.5s6 2.2 6 5.5"/><circle cx="17" cy="9" r="2.4"/><path d="M16 14.6c2.9.2 5 2.2 5 5.4"/></svg></div>
+      <div class="lab">Film crew</div><div class="num">0</div></div>
+    <div class="card" id="c2" style="top:956px"><div class="tile" style="background:linear-gradient(#22B5D6,#0891B2)">
+      <svg width="70" height="70" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M3 9h18M7 13l3 2-3 2"/></svg></div>
+      <div class="lab">Editing apps</div><div class="num">0</div></div>
+    <div class="card" id="c3" style="top:1212px"><div class="tile" style="background:linear-gradient(#1A7F99,#0E5F73)">
+      <svg width="70" height="70" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="8" r="3.6"/><path d="M5 20c0-3.8 3.1-6 7-6s7 2.2 7 6"/></svg></div>
+      <div class="lab">Editors hired</div><div class="num" id="n3">0</div></div>
+  </div>
+
+  <!-- S6 SYSTEM 15.2-16.6 -->
+  <div class="scene" id="s6" data-start="15.2" data-duration="1.4">
+    <div class="center k">It needs a</div>
+    <div class="center big serif">system.</div>
+    <div class="wave" id="w6"></div>
+  </div>
+
+  <!-- S13 CTA 30.7-35.5 -->
+  <div class="scene" id="s13" data-start="30.7" data-duration="4.8">
+    <div class="center k">Comment</div>
+    <div class="center big head">VIDEO</div>
+    <div class="center sub">and we'll show you what <b>yours</b> looks like.</div>
+    <div class="thread">
+      <div class="row" id="r1"><div class="av" style="background:linear-gradient(135deg,#F2C14E,#E07A5F)"></div>
+        <div class="bub kw"><span class="u">yourbusiness</span>VIDEO</div></div>
+      <div class="row reply" id="r2"><div class="av" style="background:#0E5F73;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:34px">QW</div>
+        <div class="bub"><span class="u">yourbrand</span>Sent! Check your DMs for your sample.</div></div>
+      <div class="row reply" id="r3" style="margin-left:232px"><div class="bub"><span class="typing"><i></i><i></i><i></i></span></div></div>
+    </div>
+    <div class="input">Add a comment...<div class="send"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></div></div>
+  </div>
+</div>
+<script>
+// build waveform bars deterministically
+const H1=[10,18,26,40,30,52,44,28,36,58,48,30,22,38,50,34,20,14,24,30];
+const b1=document.getElementById('b1'); H1.forEach(h=>{const i=document.createElement('i');i.style.height=h+'px';b1.appendChild(i)});
+const H6=[30,60,90,130,80,150,110,70,120,160,100,60,90,140,70,40,80,50,30];
+const w6=document.getElementById('w6'); H6.forEach(h=>{const i=document.createElement('i');i.style.height=h+'px';w6.appendChild(i)});
+
+const tl=gsap.timeline({paused:true});
+const POP={duration:0.28,ease:"back.out(2.2)"};   // 0 -> ~106% -> 100% in ~8 frames
+const show=(id,s,d)=>{tl.set(id,{visibility:"visible"},s);tl.set(id,{visibility:"hidden"},s+d)};
+show("#s1",0,3.5); show("#s3",6.2,4.8); show("#s6",15.2,1.4); show("#s13",30.7,4.8);
+// S1: words appear on the spoken word, last word in serif rises from blur
+tl.fromTo("#s1 .l1",{opacity:0,y:20},{opacity:1,y:0,duration:0.25,ease:"power3.out"},0.05);
+tl.fromTo("#s1 .l2",{opacity:0,y:30,filter:"blur(8px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.3,ease:"power3.out"},1.3);
+tl.fromTo("#s1 .l3",{opacity:0,y:40,filter:"blur(10px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"expo.out"},2.5);
+tl.fromTo("#s1 .pill",{scale:0.9,opacity:0},{scale:1,opacity:1,...POP},0.0);
+// S3: 3D object drops, cards pop on each label word
+tl.fromTo("#clap",{y:-500,rotation:-28},{y:0,rotation:-10,duration:0.5,ease:"back.out(1.4)"},6.2);
+tl.to("#clap",{y:-40,scale:0.92,duration:3.5,ease:"sine.inOut"},6.7);
+["#c1","#c2","#c3"].forEach((c,i)=>tl.fromTo(c,{scale:0.6,opacity:0,y:40},{scale:1,opacity:1,y:0,...POP},6.4+i*1.5));
+// S6: hard cut to full-bleed accent, serif word scales in
+tl.fromTo("#s6 .big",{scale:1.25,opacity:0,filter:"blur(14px)"},{scale:1,opacity:1,filter:"blur(0px)",duration:0.35,ease:"expo.out"},15.45);
+tl.fromTo("#w6 i",{scaleY:0.2},{scaleY:1,duration:0.2,stagger:{each:0.025,yoyo:true,repeat:5},ease:"sine.inOut"},15.5);
+// S13: keyword types, comment then reply pop
+tl.fromTo("#s13 .big",{opacity:0,y:30},{opacity:1,y:0,duration:0.3,ease:"power3.out"},30.95);
+tl.fromTo("#s13 .sub",{opacity:0},{opacity:1,duration:0.25},31.5);
+tl.fromTo("#r1",{opacity:0,y:30,scale:0.9},{opacity:1,y:0,scale:1,...POP},32.0);
+tl.fromTo("#r2",{opacity:0,y:30,scale:0.9},{opacity:1,y:0,scale:1,...POP},32.9);
+tl.fromTo("#r3",{opacity:0},{opacity:1,duration:0.15},33.3);
+window.__timelines=window.__timelines||{}; window.__timelines.kf=tl;
+const t=parseFloat(new URLSearchParams(location.search).get('t'));
+if(!isNaN(t)) tl.seek(t,false);
+document.fonts.ready.then(()=>{document.body.dataset.ready='1'});
+</script>
+</body></html>

@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(source engine/env.sh:*)",
+      "Bash(node engine/build.mjs:*)",
+      "Bash(node engine/vo.mjs:*)",
+      "Bash(engine/stills.sh:*)",
+      "Bash(engine/render.sh:*)",
+      "Bash(engine/save-key.sh:*)",
+      "Bash(./install.sh:*)",
+      "Bash(ls:*)",
+      "Read(**)",
+      "Write(specs/**)",
+      "Edit(specs/**)",
+      "Edit(ideas/used.md)"
+    ],
+    "deny": ["Read(**/.env)", "Read(**/.env.*)"]
+  }
+}

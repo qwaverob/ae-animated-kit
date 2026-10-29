@@ -1,0 +1,86 @@
+{
+ "slug": "example-storm-photos",
+ "title": "After a storm, take these 5 photos",
+ "caption": "After a storm, take these 5 photos.\nAll from the ground. Never climb a damaged roof.\nNot sure what you see? DM us a photo.\nES: Después de una tormenta, toma estas 5 fotos desde el suelo.",
+ "check_with_ae": [
+  "\"DM us a photo\": who answers and how fast?"
+ ],
+ "slides": [
+  {
+   "template": "house",
+   "props": {
+    "roof": "shingle",
+    "weather": "storm",
+    "palms": 2
+   },
+   "kicker": "STORM SEASON",
+   "headline": "After a storm, take these **5 photos**",
+   "line": "From the ground. Never climb a damaged roof."
+  },
+  {
+   "template": "photos",
+   "props": {
+    "roof": "shingle"
+   },
+   "kicker": "PHOTO 1",
+   "headline": "The **whole roof** from the street",
+   "line": "Every side of the house, wide shots first."
+  },
+  {
+   "template": "house",
+   "props": {
+    "roof": "shingle",
+    "weather": "clear",
+    "palms": 1,
+    "damage": [
+     "lifted",
+     "missing"
+    ],
+    "callouts": [
+     {
+      "label": "Lifted",
+      "at": "lifted"
+     },
+     {
+      "label": "Missing",
+      "at": "missing"
+     }
+    ]
+   },
+   "kicker": "PHOTO 2",
+   "headline": "Any **lifted or missing** shingles",
+   "line": "Zoom in from the ground with your phone."
+  },
+  {
+   "template": "inside",
+   "props": {
+    "label": "New stain?"
+   },
+   "kicker": "PHOTO 3",
+   "headline": "**Ceiling stains** inside",
+   "line": "Note the date you first saw it."
+  },
+  {
+   "template": "checklist",
+   "props": {
+    "items": [
+     "Gutters and downspouts",
+     "Fences and screens",
+     "Date and time"
+    ]
+   },
+   "kicker": "PHOTOS 4 AND 5",
+   "headline": "**Gutters, screens** and the date",
+   "line": "Small damage outside often means damage on top."
+  },
+  {
+   "template": "endcard",
+   "props": {
+    "cta": "DM US A PHOTO"
+   },
+   "kicker": "NOT SURE?",
+   "headline": "Send us your photos, we **take a look**",
+   "line": "Save this post for storm season."
+  }
+ ]
+}
