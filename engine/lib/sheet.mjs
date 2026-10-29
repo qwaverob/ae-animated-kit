@@ -13,8 +13,8 @@ const items = [
 const html = `<!doctype html><html><head><meta charset="utf-8"><style>${fontCss('vendor/fonts')}
 body{margin:0;background:${A.C.sky};font-family:Poppins;width:1600px}
 .g{display:flex;flex-wrap:wrap;gap:24px;padding:24px}.c{background:#fff;border:3px solid #dfe6ee;border-radius:16px;padding:14px;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;min-width:150px}
-.c b{font:600 18px Poppins;margin-top:8px;color:#13294B} svg *{vector-effect:non-scaling-stroke}</style></head><body>
-<div style="padding:24px 24px 0;font:800 34px Poppins;color:#13294B">A&amp;E asset library (one style, one 6 px outline)</div>
-<div style="padding:8px 24px;background:#13294B;margin:12px 24px;border-radius:12px">${A.wordmark({ h: 40 })}</div>
+.c b{font:600 18px Poppins;margin-top:8px;color:#202840} svg *{vector-effect:non-scaling-stroke}</style></head><body>
+<div style="padding:24px 24px 0;font:800 34px Poppins;color:#202840">A&amp;E asset library (one style, one 6 px outline)</div>
+<div style="padding:8px 24px;background:#202840;margin:12px 24px;border-radius:12px">${A.wordmark({ h: 60, base: 'vendor' })}</div>
 <div class="g">${items.map(([n, s]) => `<div class="c">${s}<b>${n}</b></div>`).join('')}</div></body></html>`;
 writeFileSync(process.argv[2] || 'asset-sheet.html', html);

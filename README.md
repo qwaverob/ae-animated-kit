@@ -26,3 +26,5 @@ A plain Claude chat or Claude Project cannot do this: it has to run commands on 
 
 The voice key is saved only in the local, git-ignored `.env`. Fonts: Poppins and Anton (SIL Open Font License).
 GSAP: free standard license. No music, no image generators, no cloned voices.
+
+If anything ever looks off, tell it: use the A&E logo and colors on everything.

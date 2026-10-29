@@ -14,5 +14,6 @@ EVERY TIME I SAY "make a new one" (or "dame una nueva"):
 - When I answer with a number, build it, check the stills and the contact sheet yourself, fix anything that looks wrong, then tell me where the files are, the caption to paste, and anything to check with A&E.
 - Carousel = 5 to 7 slides, each a silent MP4 plus a PNG. Video = 30 to 40 seconds, vertical, with the voiceover.
 - Voice: the first time a video needs it, ask me to copy the ElevenLabs key (Cmd+C) and tell you when it is copied, then save it with engine/save-key.sh. Never show the key and never ask me to paste it into this chat. If I have no key, make the video silent.
+- If I ever say "use the A&E logo and colors on everything", or anything looks off-brand, make sure every slide and scene uses the A&E logo and colors from brand/brand.md (the engine does this by default).
 - Never post or send anything. I post it myself.
 - If I write in Spanish, answer in Spanish.

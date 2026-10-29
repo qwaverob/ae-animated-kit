@@ -4,7 +4,7 @@
 // Do not draw new trees, houses or props inline in a spec or template.
 // Add them here, in this style, and run the asset sheet QA.
 export const C = {
-  ink: '#0F1E36', navy: '#13294B', navy2: '#0C1C36', orange: '#F47B20', orangeD: '#D9650F',
+  ink: '#151A2B', navy: '#202840', navy2: '#181E31', orange: '#FF7D2E', orangeD: '#E5651A', gold: '#FFBA25',
   cream: '#F6EAD3', creamD: '#E6D3B1', white: '#FFFFFF', sky: '#CFE4F5', skyStorm: '#6B7F9E',
   cloud: '#FFFFFF', cloudStorm: '#AEB9CB', grass: '#69B36F', grassD: '#4E9757',
   leaf: '#3F9E5E', leafD: '#2D7C47', trunk: '#C18B57', trunkD: '#9C6A3C',
@@ -194,9 +194,8 @@ export function ceiling({ w = 1000, id = 'cl' } = {}) {
   <line x1="0" y1="150" x2="1000" y2="150" ${st}/><rect x="380" y="380" width="240" height="200" rx="8" fill="#BFE0F7" ${st}/><line x1="500" y1="382" x2="500" y2="578" ${st}/>
   <rect x="80" y="560" width="250" height="120" rx="24" fill="${C.navy}" ${st}/><rect x="60" y="600" width="290" height="80" rx="20" fill="${C.navy}" ${st}/>`);
 }
-export function wordmark({ h = 40, color = C.white } = {}) {
-  // Placeholder text wordmark until A&E sends the official logo file.
-  return `<div class="wordmark" style="display:flex;align-items:center;gap:12px;height:${h}px;color:${color};font:700 ${Math.round(h * 0.72)}px/1 Poppins;white-space:nowrap">
-  <svg viewBox="0 0 60 40" width="${Math.round(h * 1.4)}" height="${h}"><polyline points="4,34 30,8 56,34" fill="none" stroke="${C.orange}" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg>A&amp;E Brothers Roofing</div>`;
+export function wordmark({ h = 40, base = 'assets' } = {}) {
+  // A&E's official logo (from aebrothersroofing.com), transparent PNG for dark backgrounds. Never redraw or recolor it.
+  return `<img class="wordmark" src="${base}/ae-logo.png" alt="A&amp;E Brothers Roofing" style="display:block;height:${h}px;width:auto">`;
 }
 export const ASSET_NAMES = ['house', 'palm', 'cloud', 'sun', 'bolt', 'magnifier', 'phone', 'camera', 'photoCard', 'check', 'cross', 'noSign', 'ladder', 'shield', 'clipboard', 'calendar', 'gift', 'tag', 'nail', 'drop', 'bubble', 'gutter', 'swatch', 'ceiling', 'wordmark'];

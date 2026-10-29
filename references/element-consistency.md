@@ -4,7 +4,7 @@ The Tofu engine gets every element right because the model never draws freely. I
 engine draws from fixed, shared parts. This kit works the same way.
 
 1. **One style, one library.** Every picture comes from `engine/lib/assets.mjs`: flat fills, one 6 px dark ink
-   outline (#0F1E36), one palette. No gradients, no photo textures, no 3D, no clip art, no AI images mixed in.
+   outline (#151A2B), one palette. No gradients, no photo textures, no 3D, no clip art, no AI images mixed in.
 2. **Same model every time.** One house model, one palm model, one cloud. Size and position are set by the
    template, not by you. Max 2 palms per scene, always fully in the frame, never cropped by an edge.
 3. **Shared scene kit.** Scenes are templates (`engine/lib/templates.mjs`). You choose a template and props in a

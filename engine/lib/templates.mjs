@@ -203,7 +203,7 @@ export const T = {
     return { hero: `#${P}-kw`, html: h, anim, sky: C.sky, noGround: true };
   },
   endcard(P, p, m) {
-    const h = `<div id="${P}-wm" class="el center" style="left:0;top:180px;width:1000px;height:120px">${A.wordmark({ h: 64, color: C.white })}</div>
+    const h = `<div id="${P}-wm" class="el center" style="left:0;top:40px;width:1000px;height:300px;display:flex;justify-content:center">${A.wordmark({ h: 290 })}</div>
       <div id="${P}-cta" class="el center" style="left:60px;top:360px;width:880px;height:220px"><div class="kw big2" style="font-size:${Math.max(64, Math.min(110, Math.floor(1500 / Math.max(10, (p.cta || 'DM US A PHOTO').length))))}px">${esc(p.cta || 'DM US A PHOTO')}</div></div>
       ${p.disclaimer ? `<div class="el center discl2" style="left:60px;top:620px;width:880px">${esc(p.disclaimer)}</div>` : ''}`;
     const anim = (t0, d) => pop(`#${P}-wm`, t0, 0.3) + pop(`#${P}-cta`, t0 + 0.3, 0.4);

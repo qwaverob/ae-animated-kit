@@ -86,7 +86,7 @@ if (kind === 'carousel') {
   ${st.html}
   <div class="txt">${sl.kicker ? `<div class="kicker">${esc(sl.kicker)}</div>` : ''}<div class="hl">${accent(sl.headline)}</div>${sl.line ? `<div class="ln">${accent(sl.line)}</div>` : ''}</div>
   ${sl.disclaimer ? `<div class="sd">${esc(sl.disclaimer)}</div>` : ''}
-  <div class="foot">${A.wordmark({ h: 34 })}<div class="ctr">${String(i + 1).padStart(2, '0')} / ${String(slides.length).padStart(2, '0')}${last ? '' : ' &rarr;'}</div></div>
+  <div class="foot">${A.wordmark({ h: 72 })}<div class="ctr">${String(i + 1).padStart(2, '0')} / ${String(slides.length).padStart(2, '0')}${last ? '' : ' &rarr;'}</div></div>
  </div>
 </div>
 <script>/* frame 0 must be a finished still (it is the grid cover): the scene is built on an inner
@@ -153,7 +153,7 @@ if (kind === 'video') {
   const html = `<!doctype html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=${W}, height=${H}"/><title>${esc(spec.title)}</title>
 <script src="assets/gsap.min.js"></script><style>${CSS('assets/fonts')}
 .top{position:absolute;left:0;top:0;width:1080px;height:470px;background:${C.navy}}
-.wm{position:absolute;left:60px;top:96px}.hd{position:absolute;left:60px;top:172px;width:960px}
+.wm{position:absolute;left:60px;top:52px}.hd{position:absolute;left:60px;top:172px;width:960px}
 .vh{font:800 68px/1.1 Poppins;color:#fff;margin-top:18px;letter-spacing:-.01em;text-wrap:balance}
 .site{position:absolute;left:0;width:1080px;top:1660px;text-align:center;font:600 34px Poppins;color:#8FA3C2}.prog{position:absolute;left:60px;top:1630px;width:960px;height:10px;border-radius:5px;background:#24406A}.progbar{width:100%;height:100%;border-radius:5px;background:${C.orange};transform-origin:0 50%}
 .bot{position:absolute;left:0;top:1600px;width:1080px;height:320px;background:${C.navy};border-top:6px solid ${C.ink}}
@@ -161,7 +161,7 @@ if (kind === 'video') {
 .cw{display:inline-block}.ck{background:${C.orange};border:6px solid ${C.ink};border-radius:18px;padding:0 16px;-webkit-text-stroke:0;color:#fff}
 </style></head><body>
 <div id="root" data-composition-id="main" data-start="0" data-width="${W}" data-height="${H}" data-duration="${total}">
- <div id="frame" class="clip" data-start="0" data-duration="${total}" data-track-index="0" style="position:absolute;inset:0"><div class="top"></div><div class="bot"></div><div class="wm">${A.wordmark({ h: 44 })}</div><div class="site">aebrothersroofing.com</div><div class="prog"><div id="progbar" class="progbar"></div></div></div>
+ <div id="frame" class="clip" data-start="0" data-duration="${total}" data-track-index="0" style="position:absolute;inset:0"><div class="top"></div><div class="bot"></div><div class="wm">${A.wordmark({ h: 104 })}</div><div class="site">aebrothersroofing.com</div><div class="prog"><div id="progbar" class="progbar"></div></div></div>
  ${scHtml}
  ${capHtml}
 </div>

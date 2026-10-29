@@ -3,10 +3,10 @@
 The engine already applies the colors, fonts, art style and layout. You only write words.
 
 ## Look (already built in)
-- Navy `#13294B` background, white text, orange `#F47B20` on 1 to 3 key words (wrap them in `**like this**`).
+- Colors taken from A&E's own logo files on aebrothersroofing.com: navy `#202840` background, white text, orange `#FF7D2E` on 1 to 3 key words (wrap them in `**like this**`), gold `#FFBA25` as the second accent.
 - Fonts: Poppins (headlines and text), Anton (captions and keyword stamps). Both bundled with an open license.
 - One flat illustration style: same house, same palms, same props, 6 px dark outline on everything.
-- Logo: a text placeholder "A&E Brothers Roofing" with an orange roof mark. **Check with A&E:** official logo file.
+- Logo: A&E's official logo (`brand/logo/ae-logo-light.png`, transparent, for dark backgrounds; copy in `engine/vendor/ae-logo.png`). The engine puts it small in the corner of every slide and scene and large on the end card. Never redraw, recolor, stretch or crop it, and never use the old text placeholder.
 
 ## Audience
 South Florida homeowners, 35 to 70, many bilingual. They worry about hurricanes, leaks, insurance and cost. Plain words, no roofing jargon.
@@ -25,6 +25,6 @@ South Florida homeowners, 35 to 70, many bilingual. They worry about hurricanes,
 11. Never tell people to climb on a roof. "From the ground" or "Send us a photo."
 
 ## Check with A&E (add a line to the end of your reply when a post uses one)
-Before posting, confirm with A&E any claim about: the logo and colors, what an inspection includes and whether it
+Before posting, confirm with A&E any claim about: what an inspection includes and whether it
 is free, yearly inspection terms, insurance or storm documentation, who answers DMs, material cost or lifespan,
 and Spanish captions.
