@@ -6,10 +6,10 @@ async def main():
         b=await p.chromium.launch()
         pg=await b.new_page(viewport={"width":1080,"height":1920})
         for name,t in TIMES:
-            await pg.goto(f"file:///workspace/remake-DeG1R2Iu1n5/kf/index.html?t={t}")
+            await pg.goto(f"file:///path/to/your/project/kf/index.html?t={t}")
             await pg.wait_for_selector("body[data-ready='1']")
             await pg.wait_for_timeout(150)
-            await pg.locator("#root").screenshot(path=f"/workspace/remake-DeG1R2Iu1n5/kf/{name}.png")
+            await pg.locator("#root").screenshot(path=f"/path/to/your/project/kf/{name}.png")
             print(name)
         await b.close()
 asyncio.run(main())

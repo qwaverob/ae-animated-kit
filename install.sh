@@ -7,6 +7,9 @@ set -uo pipefail
 KIT="$(cd "$(dirname "$0")" && pwd)"; CHECK=0; [ "${1:-}" = "--check" ] && CHECK=1
 T="$HOME/.ae-kit"; BIN="$T/bin"; mkdir -p "$BIN"
 . "$KIT/engine/env.sh"
+# run a step with no keyboard input and a time limit, so nothing can hang waiting for a question
+limited(){ local secs=$1; shift; "$@" </dev/null >/dev/null 2>&1 & local p=$!; local i=0
+  while kill -0 $p 2>/dev/null; do [ $i -ge $secs ] && { kill $p 2>/dev/null; return 124; }; sleep 1; i=$((i+1)); done; wait $p; }
 FAILED=0; ok(){ echo "  OK    $1"; }; add(){ echo "  ADD   $1"; }; bad(){ echo "  FAIL  $1"; FAILED=1; }
 ARCH=$(uname -m); [ "$ARCH" = x86_64 ] && NARCH=x64 || NARCH=arm64
 OS=$(uname | tr '[:upper:]' '[:lower:]')
@@ -43,13 +46,13 @@ fi
 
 echo "4. Chrome for rendering"
 if [ $CHECK = 1 ]; then hyperframes browser path >/dev/null 2>&1 && ok "found" || add "render browser"
-else hyperframes browser ensure >/dev/null 2>&1 && ok "ready" || bad "could not get the render browser"; fi
+else limited 600 hyperframes browser ensure && ok "ready" || bad "could not get the render browser"; fi
 
 if [ $CHECK = 0 ]; then
   echo "5. Skills"
   if [ "${AE_KIT_NO_GLOBAL:-0}" = 1 ]; then echo "  skipped global skill copy (test mode)"
   else
-    hyperframes skills >/dev/null 2>&1 && ok "HyperFrames animation skills" || echo "  HyperFrames skills skipped (the kit works without them)"
+    CI=1 limited 180 hyperframes skills && ok "HyperFrames animation skills" || echo "  HyperFrames skills skipped (the kit works without them)"
     mkdir -p "$HOME/.claude/skills"
     for s in ae-animated-carousels ae-animated-videos; do d="$HOME/.claude/skills/$s"
       [ -d "$d" ] && mv "$d" "$d.backup-$(date +%Y%m%d%H%M%S)"

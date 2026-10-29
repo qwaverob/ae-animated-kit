@@ -25,11 +25,6 @@ South Florida homeowners, 35 to 70, many bilingual. They worry about hurricanes,
 11. Never tell people to climb on a roof. "From the ground" or "Send us a photo."
 
 ## Check with A&E (add a line to the end of your reply when a post uses one)
-- Official logo file and brand colors.
-- Is the roof inspection free, and what does it include?
-- Free yearly inspection with a reroof: exact wording and how many years.
-- Does the inspection include documenting storm damage for insurance?
-- "DM us a photo": who answers and how fast?
-- OK with "General tips, not legal or insurance advice"?
-- Material cost and lifespan wording (shingle vs tile vs metal).
-- OK to add a Spanish line to every caption?
+Before posting, confirm with A&E any claim about: the logo and colors, what an inspection includes and whether it
+is free, yearly inspection terms, insurance or storm documentation, who answers DMs, material cost or lifespan,
+and Spanish captions.
